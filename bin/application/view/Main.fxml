@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" style="-fx-background-color: #616161;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="3.0" prefWidth="500.0" text="Market" textAlignment="CENTER">
          <font>
@@ -18,37 +18,37 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <TableView fx:id="table" editable="true" layoutX="70.0" layoutY="77.0" prefHeight="415.0" prefWidth="310.0">
+      <TableView fx:id="table" editable="true" layoutX="55.0" layoutY="75.0" prefHeight="415.0" prefWidth="310.0" style="-fx-background-color: #ffdd99;">
         <columns>
           <TableColumn fx:id="itemTblColm" prefWidth="138.0" resizable="false" text="Item" />
           <TableColumn fx:id="quantTblColm" prefWidth="84.0" resizable="false" text="Quantity" />
             <TableColumn fx:id="priceTblColm" prefWidth="87.0" resizable="false" text="Price" />
         </columns>
       </TableView>
-      <Button fx:id="saveBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="510.0" mnemonicParsing="false" onAction="#handle" prefWidth="61.0" style="-fx-background-color: BLACK;" text="Save" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="saveBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="509.0" mnemonicParsing="false" onAction="#handle" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Save" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Label fx:id="errMsgLbl" alignment="CENTER" contentDisplay="CENTER" layoutY="492.0" opacity="0.0" prefWidth="500.0" text="Item already exists: " textAlignment="CENTER" textFill="RED" />
-      <Button fx:id="createBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="409.0" layoutY="135.0" mnemonicParsing="false" prefWidth="61.0" style="-fx-background-color: BLACK;" text="Create" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="createBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="175.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Create" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="deleteBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="410.0" layoutY="201.0" mnemonicParsing="false" prefWidth="61.0" style="-fx-background-color: BLACK;" text="Delete" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="deleteBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="275.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Delete" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="navDeleteList" prefHeight="550.0" prefWidth="180.0" style="-fx-background-color:orange" translateX="-180.0">
+      <AnchorPane fx:id="navDeleteList" prefHeight="550.0" prefWidth="180.0" style="-fx-background-color: #616161; -fx-border-color: #005797;" translateX="-180.0">
          <children>
             <TextField fx:id="deleteNameTxtFld" layoutX="5.0" layoutY="305.0" promptText="Item Name:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="removeBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="386.0" mnemonicParsing="false" onAction="#deleteAction" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Remove!" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="removeBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteAction" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Remove!" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -58,31 +58,65 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="15.0" prefWidth="180.0" text="Menu" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="deleteErrMsg" alignment="CENTER" contentDisplay="CENTER" layoutY="455.0" opacity="0.0" prefWidth="180.0" text="Error: " textAlignment="CENTER" textFill="RED" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
          </children>
       </AnchorPane>
-        <AnchorPane fx:id="navCreateList" prefHeight="550.0" prefWidth="180.0" style="-fx-background-color:orange" translateX="-180" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="56.0">
+        <AnchorPane fx:id="navCreateList" prefHeight="550.0" prefWidth="180.0" style="-fx-background-color: #616161; -fx-border-color: #005797;" translateX="-180" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="56.0">
             <children>
-            <TextField fx:id="nameTxtFld" layoutX="5.0" layoutY="150.0" promptText="Item Name:">
+            <TextField fx:id="nameTxtFld" layoutX="2.5" layoutY="150.0" promptText="Item Name:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="quantityTxtFld" layoutX="5.0" layoutY="230.0" promptText="Item Quantity:">
+            <TextField fx:id="quantityTxtFld" layoutX="2.5" layoutY="230.0" promptText="Item Quantity:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="priceTxtFld" layoutX="5.0" layoutY="310.0" promptText="Item Price:">
+            <TextField fx:id="priceTxtFld" layoutX="2.5" layoutY="310.0" promptText="Item Price:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="addBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="400.0" mnemonicParsing="false" onAction="#createAction" prefWidth="61.0" style="-fx-background-color: BLACK;" text="Add!" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="addBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="400.0" mnemonicParsing="false" onAction="#createAction" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add!" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutY="70.0" prefWidth="180.0" text="Enter an item you wish to add!" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="15.0" prefWidth="180.0" text="Menu" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameErrImg" layoutX="170.0" layoutY="135.0" opacity="0.0" text="*" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="quantityErrImg" layoutX="170.0" layoutY="215.0" opacity="0.0" text="*" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="priceErrImg" layoutX="170.0" layoutY="295.0" opacity="0.0" text="*" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="createErrMsg" alignment="CENTER" contentDisplay="CENTER" layoutY="455.0" opacity="0.0" prefWidth="180.0" text="Error: " textAlignment="CENTER" textFill="RED" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>

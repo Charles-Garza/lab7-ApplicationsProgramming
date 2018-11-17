@@ -1,21 +1,15 @@
 package application.model;
 
-import java.util.ArrayList;
-
-import application.controller.MainController;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.scene.control.Labeled;
-
+/**
+ * The Class Item.
+ * 
+ * @author Charles Garza / ewn133
+ * This class handles the setting and retrieving of data for our hashmap.
+ */
 public class Item {
 	private String item;
 	private Integer quantity;
 	private Double price;
-	MainController controller = new MainController();
 	
 	public Item(){ }
 	
